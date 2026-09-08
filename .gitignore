@@ -1,0 +1,18 @@
+# Virtual Environment
+.venv/
+venv/
+ENV/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# ChromaDB persistence storage
+chroma_db/
+chromadb/
+
+# Editor / OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

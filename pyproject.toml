@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "chat-with-document"
+version = "0.1.0"
+description = "Baseline Chat with Documents App using Naive RAG"
+authors = ["Student <student@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.14"
+chromadb = ">=0.5.0"
+ollama = ">=0.4.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
