@@ -9,8 +9,8 @@ from chunking import chunk_documents
 from embeddings import get_embedding
 from ingestion import load_documents
 
-CHROMA_PATH = "./chromadb"
-COLLECTION_NAME = "it_support_doc"
+CHROMA_PATH = "./chroma_db"
+COLLECTION_NAME = "it_support_docs"
 
 def get_chroma_collections(
         collection_name:str=COLLECTION_NAME,db_path: str=CHROMA_PATH

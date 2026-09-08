@@ -43,6 +43,8 @@ chat-with-documents/
 ├── pipeline.py              # Connects retriever and generator into one function
 ├── main.py                  # Interactive terminal chat loop
 ├── generate_test_log.py     # Runs the 5 test questions and writes test_log.md
+├── compare_chunking.py      # Bonus Challenge: Compares two text splitting strategies
+├── compare_vectordb.py      # Bonus Challenge: Compares ChromaDB vs. Qdrant
 ├── test_log.md              # Output log from testing (Step 7)
 ├── reflection.md            # Homework reflection (Step 8)
 └── pyproject.toml           # Poetry project configuration
@@ -84,9 +86,23 @@ python main.py
 ```
 Type your question at the prompt. To exit the program, type `exit` or `quit`.
 
+### 5. Compare Chunking Strategies (Bonus Challenge)
+To run the side-by-side comparison between fixed and sliding window chunking:
+```bash
+python compare_chunking.py
+```
+
+### 6. Compare Vector Databases (Bonus Challenge)
+To run the comparison between ChromaDB and Qdrant:
+```bash
+python compare_vectordb.py
+```
+
 ---
 
 ## Bonus Features Implemented
 
 - **Retrieved Chunks Display**: In `main.py`, the system prints the matching chunks (source file and similarity distance) to the screen before printing the answer, so the user can verify where the answer came from.
 - **Distance Threshold Check**: In `retriever.py` and `pipeline.py`, if a question has weak similarity to the stored documents (like asking about cooking or unrelated topics), it avoids guessing and replies with *"I could not find this in your documents."*
+- **Chunking Strategy Comparison**: In `compare_chunking.py`, the script splits the same document using fixed chunking (0 overlap) vs. sliding window (100 overlap) and demonstrates how overlap prevents sentences from being severed mid-instruction.
+- **Vector Database Comparison**: In `compare_vectordb.py`, the script compares ChromaDB (persistent) against Qdrant (in-memory/embedded) on the same dataset, verifying that both achieve 100% agreement on retrieved documents while comparing latency and scoring conventions.
